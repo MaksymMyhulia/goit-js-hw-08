@@ -1,6 +1,4 @@
 # goit-js-hw-08
-Посилання на живу сторінку http://localhost:1234
-
 
 ## Завдання 1 - бібліотека `SimpleLightbox`
 
