@@ -15,11 +15,11 @@ e.currentTarget.reset();
 
 function onInputValue (e) {
 let value = localStorage.getItem('feedback-form-state');
-value = value ? JSON.parse('value') : {};
+value = value ? JSON.parse(value) : {};
 let {email, message} = form.elements;
 value = {
     email: email.value,
     message: message.value
 }
-localStorage.setItem('feedback-form-state', JSON.stringify(value))
+localStorage.setItem('feedback-form-state', JSON.stringify(value));
 }

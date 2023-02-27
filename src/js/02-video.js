@@ -11,7 +11,11 @@ const player = new Player(iframe, {
   
 const getCurrentTime = function(currentTime) {
     const seconds = currentTime.seconds;
-    localStorage.setItem('videoplayer-current-time', JSON.stringify(seconds));
+    localStorage.setItem('videoplayer-current-time', seconds);
 }
 player.on('timeupdate', throttle(getCurrentTime, 1000));
-player.setCurrentTime(JSON.parse(localStorage.getItem('videoplayer-current-time')));
+if (localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+} else {
+  player.setCurrentTime(0);
+}
