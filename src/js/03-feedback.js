@@ -10,9 +10,12 @@ form.addEventListener("input", throttle(onInputValue, 500));
 function onFormSubmit (e) {
 e.preventDefault();
 const {email, message} = e.currentTarget.elements;
+if (email.value && message.value) {
 console.log({email: email.value, message: message.value});
 localStorage.removeItem(LOCALSTORAGE_KEY);
 e.currentTarget.reset();
+}
+   return;
 }
 
 function onInputValue (e) {
